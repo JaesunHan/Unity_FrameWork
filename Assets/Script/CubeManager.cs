@@ -15,7 +15,7 @@ public class CubeManager : MonoSingleton<CubeManager>
         }
     }
 
-    public static Observer_Pattern<AddCubeMessage> OnAdd_Cube { get; private set; } = new Observer_Pattern<AddCubeMessage>();
+    public static Observer_Pattern<AddCubeMessage> OnAdd_Cube { get; private set; } = Observer_Pattern<AddCubeMessage>.instance;
 
     public GameObject cubePref;
 

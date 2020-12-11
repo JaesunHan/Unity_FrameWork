@@ -3,20 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class Observer_Pattern<Args>
+public class Observer_Pattern<Args> : Singleton<Observer_Pattern<Args>>
 {
-    //private Observer_Pattern<Args> _instance = null;
-    //public Observer_Pattern<Args> instance 
-    //{
-    //    get
-    //    {
-    //        if (null == _instance)
-    //            _instance = new Observer_Pattern<Args>();
-    //
-    //        return _instance;
-    //    }
-    //}
-
     public struct ObserverWrapper
     {
         public Action<Args> OnNotify { get; private set; }
