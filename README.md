@@ -3,7 +3,7 @@
 
 그외에 단일적으로 사용할 수 있는 코드를 업로드 (ex. DebugLogManager.cs)
 
-## Singleton Pattern
+## Singleton Pattern (참고 링크 : https://debuglog.tistory.com/35)
 예제 Scene 이름 : Observer N Singleton
 
 폴더 Scrit > Singleton 에 Singleton.cs 와 MonoSingleton.cs 가 있습니다.
