@@ -1,5 +1,7 @@
 # Unity_FrameWork
-자주 사용하는 디자인 패턴을 구현하고, 예제를 제작하는 프로젝트
+게임을 제작할 때 자주 사용하는 디자인 패턴을 구현하고, 예제를 제작하는 프로젝트
+
+그외에 단일적으로 사용할 수 있는 코드를 업로드 (ex. DebugLogManager.cs)
 
 ## Singleton Pattern
 예제 Scene 이름 : Observer N Singleton
@@ -11,7 +13,7 @@
 
 Observer N Singleton 씬에서 CubeManager오브젝트에 추가된 CubeMangaer 스크립트 컴포넌트가 MonoSinglton을 상속받은 클래스입니다.
 
-## Observer Pattern
+## Observer Pattern (참고 링크 : https://github.com/KorStrix/Unity_Pattern.git)
 예제 Scene 이름 : Observer N Singleton
 
 폴더 Scrit > Observer 에 Observer_Pattern.cs 가 있습니다.
@@ -24,3 +26,11 @@ Observer N Singleton 씬에서 CubeManager오브젝트에 추가된 CubeMangaer 
 자세한 예시는, 큐브 매니저에 아래와 같이 적힌 변수가 있습니다. 해당 변수를 참조하는 곳을 보시면 어떻게 사용하는지 파악할 수 있을 겁니다.
 
 ![Example_Observer_Pattern](https://user-images.githubusercontent.com/17717157/101870501-131a0300-3bc5-11eb-8a03-aec3b8685336.png)
+
+===================================================================================
+## DegbugLogManager
+특정 플랫폼에서는 디버그 모드를 체크하여 디버그 모드일 때만, 로그가 출력되도록 한다.
+
+현재는 아래 그림과 같이 Android, IOS, 윈도우 실행 파일 일 경우에는 디버그 모드를 체크하도록 되어있습니다.
+![image](https://user-images.githubusercontent.com/17717157/101871778-80c72e80-3bc7-11eb-8f89-4f0f4f92b767.png)
+
