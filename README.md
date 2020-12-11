@@ -18,8 +18,9 @@ Observer N Singleton 씬에서 CubeManager오브젝트에 추가된 CubeMangaer 
 
 옵저버 패턴은 Singleton 클래스를 상속받아 구현했습니다.
 
-사용 방법은 큐브 매니저에 
+사용 방법 : Observer_Pattern 변수를 선언하고, 해당 변수의 멤버에 있는 Subscribe 에 이벤트 함수를 등록합니다.
+이벤트가 발생하는 시점에 DoNotify 를 호출해줍니다.
 
-<Image>
+자세한 예시는, 큐브 매니저에 아래와 같이 적힌 변수가 있습니다. 해당 변수를 참조하는 곳을 보시면 어떻게 사용하는지 파악할 수 있을 겁니다.
 
-</Image>
+![Example_Observer_Pattern](https://user-images.githubusercontent.com/17717157/101870501-131a0300-3bc5-11eb-8a03-aec3b8685336.png)
