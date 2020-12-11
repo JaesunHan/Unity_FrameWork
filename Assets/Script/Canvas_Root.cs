@@ -21,6 +21,7 @@ public class Canvas_Root : MonoBehaviour
 
     public void DoPress_Button(int iPlusCount)
     {
+        DebugLogManager.Log($"큐브 추가 메시지 발생! 추가할 큐브 개수 : {iPlusCount}");
         CubeManager.OnAdd_Cube.DoNotify(new CubeManager.AddCubeMessage(iPlusCount));
     }
 

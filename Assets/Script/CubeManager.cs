@@ -36,6 +36,8 @@ public class CubeManager : MonoSingleton<CubeManager>
 
     private void OnAdd_Cube_Func(AddCubeMessage pMessage)
     {
+        DebugLogManager.Log($"큐브 추가 이벤트 처리! 추가할 큐브 개수 : {pMessage.iPlusCount}");
+
         for (int i = 0; i < pMessage.iPlusCount; ++i)
         {
             GameObject goCube = Instantiate(cubePref);
