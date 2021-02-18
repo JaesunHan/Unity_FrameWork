@@ -6,7 +6,7 @@
 /// https://debuglog.tistory.com/35
 /// </summary>
 /// <typeparam name="T"></typeparam>
-public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
+public class MonoSingleton<T> : ObjectBase where T : MonoBehaviour
 {
     protected static T _instance = null;
 
