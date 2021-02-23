@@ -11,6 +11,6 @@ public class ObjectBase : MonoBehaviour
 
     protected virtual void OnAwake()
     {
-
+ 
     }
 }

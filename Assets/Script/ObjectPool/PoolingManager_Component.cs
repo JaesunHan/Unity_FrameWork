@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PoolingManager_Component<CLASS_POOL_TARGER> : MonoSingleton<PoolingManager_Component<CLASS_POOL_TARGER>> 
+public class PoolingManager_Component<CLASS_POOL_TARGER> : Singleton<PoolingManager_Component<CLASS_POOL_TARGER>> 
     where CLASS_POOL_TARGER : Component
 {
     const int const_iPool_Default_Count = 5;
@@ -26,7 +26,7 @@ public class PoolingManager_Component<CLASS_POOL_TARGER> : MonoSingleton<Pooling
         GameObject pDequeueObj = null;
         if (_qPool.Count <= 0)
         {
-            var pObj = Instantiate(pObjectOriginal.gameObject);
+            var pObj = GameObject.Instantiate(pObjectOriginal.gameObject);
             pObj.hideFlags = HideFlags.HideInHierarchy;
             pObj.transform.SetParent(_objRoot.transform);
 
@@ -54,7 +54,7 @@ public class PoolingManager_Component<CLASS_POOL_TARGER> : MonoSingleton<Pooling
     {
         for (int i = 0; i < const_iPool_Default_Count; ++i)
         {
-            var pObj = Instantiate(pObjectOriginal.gameObject);
+            var pObj = GameObject.Instantiate(pObjectOriginal.gameObject);
             pObj.hideFlags = HideFlags.HideInHierarchy;
             pObj.transform.SetParent(_objRoot.transform);
 
