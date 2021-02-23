@@ -16,11 +16,6 @@ public class PanelBase : MonoBehaviour
         ButtonHelper.DoInit_HasUIElement(this);
     }
 
-    //public virtual void DoInit()
-    //{
-        
-    //}
-
     public virtual void DoShow()
     {
         bIsShow = true;

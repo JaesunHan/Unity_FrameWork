@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PoolingManager_Component<CLASS_POOL_TARGER> : Singleton<PoolingManager_Component<CLASS_POOL_TARGER>> 
+public class PoolingManager_Component<CLASS_POOL_TARGER> : Singleton<PoolingManager_Component<CLASS_POOL_TARGER>>
     where CLASS_POOL_TARGER : Component
 {
-    const int const_iPool_Default_Count = 5;
+    const int const_iPool_Default_Count = 30;
 
     private Queue<GameObject> _qPool = new Queue<GameObject>();
 
@@ -15,27 +15,31 @@ public class PoolingManager_Component<CLASS_POOL_TARGER> : Singleton<PoolingMana
     public void DoInit_Pool(CLASS_POOL_TARGER pOriginalObjectTarget)
     {
         _objRoot = new GameObject();
-        
+
         Prepare_Objec_Pool(pOriginalObjectTarget);
 
         _objRoot.name = $"{pOriginalObjectTarget.name} 풀 생성";
     }
 
-    public Component DoPop(CLASS_POOL_TARGER pObjectOriginal)
+    public Component DoPop(CLASS_POOL_TARGER pObjectOriginal, bool bDefaultActive = false)
     {
         GameObject pDequeueObj = null;
         if (_qPool.Count <= 0)
         {
             var pObj = GameObject.Instantiate(pObjectOriginal.gameObject);
             pObj.hideFlags = HideFlags.HideInHierarchy;
-            pObj.transform.SetParent(_objRoot.transform);
+            if (null == _objRoot)
+                pObj.transform.SetParent(null);
+            else
+                pObj.transform.SetParent(_objRoot.transform);
 
             _qPool.Enqueue(pObj);
         }
-        
+
         pDequeueObj = _qPool.Dequeue();
         pDequeueObj.hideFlags = HideFlags.None;
-        
+
+        pDequeueObj.gameObject.SetActive(bDefaultActive);
 
         return pDequeueObj.GetComponent<CLASS_POOL_TARGER>();
     }
@@ -57,6 +61,7 @@ public class PoolingManager_Component<CLASS_POOL_TARGER> : Singleton<PoolingMana
             var pObj = GameObject.Instantiate(pObjectOriginal.gameObject);
             pObj.hideFlags = HideFlags.HideInHierarchy;
             pObj.transform.SetParent(_objRoot.transform);
+            pObj.SetActive(false);
 
             _qPool.Enqueue(pObj);
         }

@@ -12,7 +12,7 @@ public class MonoSingleton<T> : ObjectBase where T : MonoBehaviour
 
     public static T instance
     {
-        get 
+        get
         {
             _instance = FindObjectOfType(typeof(T)) as T;
 

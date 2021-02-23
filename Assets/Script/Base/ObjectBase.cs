@@ -13,4 +13,9 @@ public class ObjectBase : MonoBehaviour
     {
  
     }
+
+    public virtual void SetActive(bool bIsActive)
+    {
+        gameObject.SetActive(bIsActive);
+    }
 }
