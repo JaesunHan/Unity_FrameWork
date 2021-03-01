@@ -5,7 +5,7 @@ using UnityEngine;
 public class CubePoolTest : MonoBehaviour
 {
     //PoolingManager_Component<CubeObject> _pCubeObjectPool = new PoolingManager_Component<CubeObject>();
-    PoolingManager_Component<CubeObject> _pCubeObjectPool = PoolingManager_Component<CubeObject>.instance;
+    PoolingComponent<CubeObject> _pCubeObjectPool = PoolingComponent<CubeObject>.instance;
 
     public CubeObject _pOriginal_CubeObj = null;
     // Start is called before the first frame update
